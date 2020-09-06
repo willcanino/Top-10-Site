@@ -1,0 +1,26 @@
+Home Page -
+The home page is the main page where as soon as you load into the site, it is the page that will show up.
+
+Categories Page -
+The Categories Page is use to show the Top 10 of 2020, 2021, 2022 etc. Once you click on the link for one of them pages it takes you to there home page (2020 home page). Once your on that home page you will be show a description of the page and all the categories made and you will be able to click on them and it will take you to all the different genres of that categorie.
+
+About Us Page -
+The About Us Page is pretty self explaniable, but its about how the company is made and questions asked about us.
+
+Contact Us Page -
+The Contact Us Page is a form where you can contact us and send emails about your questions / complaints.
+
+Log In Page -
+The Log In Page is about where you can log in to the page and have your own account and submit your survey information
+
+Sign Up Page -
+The Sign Up Page is about where if you dont have an account then you can make an account.
+
+
+What I Want Done -
+
+Sign Up Page - I would like you to make it so when i submit all my information it goes to a files and create a button (forgot password) if they press it andd submit there email it emails them a reset password
+
+Log In Page - When you press log in it shows your account and you can put it in a folder
+
+Contact Us Page - Everytime someone submits something i want to get an email notification that someone has submitted a request and that i want to find all the info in the folder please.
