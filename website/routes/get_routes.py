@@ -33,6 +33,6 @@ def login():
 def signup():
     return flask.render_template('sign-up-page.html')
 
-@app.route('/thank-you-for-contacting')
+@app.route('/thank-you-for-contacting-us')
 def thanks_contact():
     return flask.render_template('thanks-for-contacting.html')
