@@ -1,27 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="../css/navigation-css/home-page.css">
-    <title>Top 10 | Login </title>
-  </head>
-  <body>
-    <div class="topnav">
-      <a class="active" href="../../../index.html">Home</a>
-      <a href="../navigation-files/categories.html">Categories</a>
-      <a href="../navigation-files/about-us.html">About Us</a>
-      <a href="../navigation-files/contact-us.html">Contact Us</a>
-      <a href="../../code/login-files/sign-up-page.html" class="login-sign-up">Sign Up</a>
-      <a href="../../code/login-files/login-page.html" class="login-sign-up">Log In</a>
-    </div>
-    <form class="login" action="index.html" method="post">
-      <label for="email">Email</label><br>
-        <input type="text" name="email" id="email-login" maxlength="100" spellcheck="false" required="true"><br><br>
+{% extends "layout.html" %}
+{% block content %}
+  <form class="login" action="index.html" method="post">
+    <label for="email">Email</label><br>
+      <input type="text" name="email" id="email-login" maxlength="100" spellcheck="false" required="true"><br><br>
       <label for="password">Password</label><br>
         <input type="password" name="password" id="password-login" maxlength="16" spellcheck="false" required="true"><br><br>
       <button type="submit" name="button" class="btton-login">Log In</button>
-    </form>
-    <div class="sign-up-link">
-      <h2>Don't have a Top 10 Account?</h2> <a href="../../code/login-files/sign-up-page.html">Sign Up</a>
-    </div>
-  </body>
-</html>
+  </form>
+  <div class="sign-up-link">
+    <h2>Don't have a Top 10 Account?</h2>
+    <a href="../../code/login-files/sign-up-page.html">Sign Up</a>
+  </div>
+{% endblock content %}
