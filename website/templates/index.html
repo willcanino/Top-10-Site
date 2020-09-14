@@ -2,16 +2,16 @@
 <html lang="en">
   <head>
     <title>Top 10 | Home Page</title>
-      <link rel="stylesheet" href="top-10-2020/code/css/navigation-css/home-page.css">
+      <link rel="stylesheet" href="{{ url_for('static', filename='home-page.css') }}">
   </head>
   <body>
     <div class="topnav">
-      <a class=top-10-2020/"active" href="index.html">Home</a>
-      <a href="top-10-2020/code/navigation-files/categories.html">Categories</a>
-      <a href="top-10-2020/code/navigation-files/about-us.html">About Us</a>
-      <a href="top-10-2020/code/navigation-files/contact-us.html">Contact Us</a>
-      <a href="top-10-2020/code/login-files/sign-up-page.html">Sign Up</a>
-      <a href="top-10-2020/code/login-files/login-page.html">Log In</a>
+      <a class=top-10-2020/"active" href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('categories') }}">Categories</a>
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('contact') }}">Contact Us</a>
+      <a href="{{ url_for('signup') }}">Sign Up</a>
+      <a href="{{ url_for('login') }}">Log In</a>
     </div>
     <h1 id="welcome">Welcome to Top 10</h1>
   </body>
