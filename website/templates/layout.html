@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Top 10 | Home Page</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='home-page.css') }}">
+  </head>
+  <body>
+    <div class="topnav">
+      <a class=top-10-2020/"active" href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('categories') }}">Categories</a>
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('contact') }}">Contact Us</a>
+      <a href="{{ url_for('signup') }}">Sign Up</a>
+      <a href="{{ url_for('login') }}">Log In</a>
+    </div>
+    {% block content %}{% endblock content %}
+  </body>
+</html>
