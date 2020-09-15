@@ -25,7 +25,7 @@ def handle_contact_us_data():
             json.dump(post_request, file, indent=4)
 
         # Send an email when someone fill outs the `Contact Us` form
-        msg = Message(subject=f"{post_request['fname']} {post_request['lname']} has fill out the Contact Us form!",
+        msg = Message(subject=f"{post_request['fname']} {post_request['lname']} filled out the Contact Us form!",
                       body=(f"First Name: {post_request['fname']}\n"
                             f"Last Name: {post_request['lname']}\n"
                             f"Reason for Contacting: {post_request['reason']}\n"
