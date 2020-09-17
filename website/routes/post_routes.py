@@ -6,10 +6,16 @@ from flask import url_for, redirect
 from flask_mail import Message
 from dotenv import dotenv_values
 from website import app, mail
+from concurrent.futures import ThreadPoolExecutor
 
 
 @app.route('/handle-contact-us-data', methods=['POST'])
 def handle_contact_us_data():
+    with ThreadPoolExecutor() as executor:
+        executor.submit(store_and_send_contact_data)
+    return redirect(url_for('thanks_contact'))
+
+def store_and_send_contact_data():
     post_request = flask.request.form.to_dict()
     post_request.pop('button')
     contact_us_dir = pathlib.Path('./contact-us')
@@ -32,5 +38,3 @@ def handle_contact_us_data():
                             f"Email address: {post_request['eaddress']}"),
                       recipients=[dotenv_values()['contact_page_email']])
         mail.send(msg)
-
-    return redirect(url_for('thanks_contact'))
