@@ -36,28 +36,3 @@ def signup():
 @app.route('/thank-you-for-contacting-us')
 def thanks_contact():
     return flask.render_template('thanks-for-contacting.html')
-
-#Top 10 Albums :
-@app.route('/categories/music/album/coutry/t10-country-ablum.html')
-def country_album():
-    return flask.render_template('categories/music/album/country/t10-country-ablum.html')
-
-@app.route('/categories/music/album/edm/t10-edm-ablum.html')
-def country_album():
-    return flask.render_template('categories/music/album/edm/t10-edm-ablum.html')
-
-@app.route('/categories/music/album/jazz/t10-jazz-ablum.html')
-def country_album():
-    return flask.render_template('categories/music/album/jazz/t10-jazz-ablum.html')
-
-@app.route('/categories/music/album/pop/t10-pop-ablum.html')
-def country_album():
-    return flask.render_template('categories/music/album/pop/t10-pop-ablum.html')
-
-@app.route('/categories/music/album/rap/t10-rap-ablum.html')
-def country_album():
-    return flask.render_template('categories/music/album/rap/t10-rap-ablum.html')
-
-@app.route('/categories/music/album/rock/t10-country-ablum.html')
-def country_album():
-    return flask.render_template('categories/music/album/rock/t10-country-ablum.html')
