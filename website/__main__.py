@@ -36,7 +36,7 @@ args = parser.parse_args()
 
 def check_for_new_commits(delay=args.delay):
     while start_website.poll() is None:
-        git_pull = subprocess.Popen("git pull".split(), stdout=subprocess.PIPE, text=True)
+        git_pull = subprocess.Popen("git pull".split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         git_pull.wait()
         status = git_pull.stdout.read()
         yield status != "Already up to date.\n"
