@@ -47,7 +47,7 @@ else:
     logging.basicConfig(format=click.style("%(asctime)s [%(process)d] [%(levelname)s] %(message)s", fg='cyan'),
                         datefmt="[%Y-%m-%d %H:%M:%S %z]")
     start_website_command = f"gunicorn -w {os.cpu_count() * 2 + 1} website:app"
-    start_website = subprocess.Popen(start_website_command.split())
+    start_website = subprocess.Popen(start_website_command.split(), )
     running = True
     try:
         while running:
@@ -57,7 +57,7 @@ else:
                     # End website gracefully
                     start_website.terminate()
                     logging.info("New commit detected! Restarting website.")
-                start_website = subprocess.Popen(start_website_command.split())
+                    start_website = subprocess.Popen(start_website_command.split())
             running = args.restart
     except KeyboardInterrupt:
         start_website.terminate()
