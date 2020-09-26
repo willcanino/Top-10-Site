@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <!--===============================================================================================-->
@@ -23,8 +23,8 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.css" integrity="sha512-gp+RQIipEa1X7Sq1vYXnuOW96C4704yI1n0YB9T/KqdvqaEgL6nAuTSrKufUX3VBONq/TPuKiXGLVgBKicZ0KA==" crossorigin="anonymous" />
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -99,7 +99,7 @@
 <!--===============================================================================================-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/countdown/2.6.0/countdown.js" integrity="sha512-zUUZJUMK19j/aCgjs828G2oo+Xr/PPAjiCqE2nsvq6kVXcFs+9n5w8Jwe2tjKaCfNrejmL0AHvdUYq38qwZswg==" crossorigin="anonymous"></script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	<script src="{{ url_for('static', filename='development-contact-form.js') }}"></script>
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
