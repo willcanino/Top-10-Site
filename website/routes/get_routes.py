@@ -36,3 +36,7 @@ def signup():
 @app.route('/thank-you-for-contacting-us')
 def thanks_contact():
     return flask.render_template('thanks-for-contacting.html')
+
+@app.route('/dev-contact-form')
+def dev_contact_form():
+    return flask.render_template('development-contact-form.html')
