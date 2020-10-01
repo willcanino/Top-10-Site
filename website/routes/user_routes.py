@@ -10,9 +10,9 @@ def signup():
         return redirect('home')
     registration_form = RegistrationForm()
     if registration_form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('UTF-8')
-        new_user = User(username=form.username.data,
-                        email=form.email.data,
+        hashed_password = bcrypt.generate_password_hash(registration_form.password.data).decode('UTF-8')
+        new_user = User(username=registration_form.username.data,
+                        email=registration_form.email.data,
                         password=hashed_password)
         db.session.add(user); db.session.commit()
         return redirect(url_for('login'))
