@@ -14,6 +14,6 @@ def signup():
         new_user = User(username=registration_form.username.data,
                         email=registration_form.email.data,
                         password=hashed_password)
-        db.session.add(user); db.session.commit()
+        db.session.add(new_user); db.session.commit()
         return redirect(url_for('login'))
     return render_template('sign-up-page.html', form=registration_form)
