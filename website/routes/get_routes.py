@@ -29,10 +29,6 @@ def contact():
 def login():
     return flask.render_template('login-page.html')
 
-@app.route('/sign-up')
-def signup():
-    return flask.render_template('sign-up-page.html')
-
 @app.route('/thank-you-for-contacting-us')
 def thanks_contact():
     return flask.render_template('thanks-for-contacting.html')

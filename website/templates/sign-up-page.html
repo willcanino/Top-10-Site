@@ -2,19 +2,42 @@
 {% block tab_header %}Top 10 | Sign Up{% endblock tab_header %}
 {% block content %}
   <br><br>
-  <div class="login-sign-in">
+  <div class="registration">
     <h1>Sign Up Here</h1>
-    <form class="sign-up" action="../../../index.html" method="post">
-      <label for="fname">First Name</label><br><br>
-        <input type="text" name="fname" id="fname" maxlength="100" spellcheck="false" required="true" placeholder="Enter First Name"><br><br>
-      <label for="lname">Last Name</label><br><br>
-        <input type="text" name="lname" id="lname" maxlength="100" spellcheck="false" required="true" placeholder="Enter Last Name"><br><br>
-      <label for="email-sign">Email</label><br><br>
-        <input type="text" name="email-sign" id="email-sub" maxlength="100" spellcheck="false" required="true" placeholder="Enter Email Here"><br><br>
-      <label for="password-sign">Password</label><br><br>
-        <input type="text" name="password-sign" id="password-sign" maxlength="16" spellcheck="false" required="true" placeholder="Enter Password Here"><br><br>
-      <label for="password-sign-re">Password</label><br><br>
-        <input type="text" name="password-sign-re" id="password-sign-re" maxlength="16" spellcheck="false" required="true" placeholder="Repeat Password Here"><br><br>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      {{ form.username.label }}
+      <br>
+      {{ form.username }}
+      {% if form.username.errors %}
+        <br>
+        <span style="color: red">{{ form.username.errors[0] }}</span>
+      {% endif %}
+      <br>
+      <br>
+      {{ form.email.label }}
+      <br>
+      {{ form.email }}
+      {% if form.email.errors %}
+        <br>
+        <span style="color: red">{{ form.email.errors[0] }}</span>
+      {% endif %}
+      <br>
+      <br>
+      {{ form.password.label }}
+      <br>
+      {{ form.password }}
+      <br>
+      <br>
+      {{ form.confirm_password.label }}
+      <br>
+      {{ form.confirm_password }}
+      {% if form.confirm_password.errors %}
+        <br>
+        <span style="color: red">{{ form.confirm_password.errors[0] }}</span>
+      {% endif %}
+      <br />
+      {{ form.submit }}
     </form>
   </div>
 {% endblock content %}
