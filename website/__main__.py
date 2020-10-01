@@ -49,10 +49,10 @@ else:
                         format=click.style("%(asctime)s [%(process)d] [%(levelname)s] %(message)s", fg='cyan'),
                         datefmt="[%Y-%m-%d %H:%M:%S %z]")
     start_website_command = f"gunicorn -w {os.cpu_count() * 2 + 1} website:app"
-    start_website = subprocess.Popen(start_website_command.split())
     running = True
     try:
         while running:
+            start_website = subprocess.Popen(start_website_command.split())
             if args.autodeploy:
                 for new_commit in check_for_new_commits():
                     if new_commit:
@@ -63,7 +63,6 @@ else:
                         start_website = subprocess.Popen(start_website_command.split())
             else:
                 start_website.wait()
-                start_website = subprocess.Popen(start_website_command.split())
             running = args.restart
     except KeyboardInterrupt:
         start_website.terminate()
