@@ -53,13 +53,17 @@ else:
     running = True
     try:
         while running:
-            for new_commit in check_for_new_commits():
-                if new_commit:
-                    # Using SIGTERM aka Ctrl-C
-                    # End website gracefully
-                    start_website.terminate()
-                    logging.info("New commit detected! Restarting website.")
-                    start_website = subprocess.Popen(start_website_command.split())
+            if args.autodeploy:
+                for new_commit in check_for_new_commits():
+                    if new_commit:
+                        # Using SIGTERM aka Ctrl-C
+                        # End website gracefully
+                        start_website.terminate()
+                        logging.info("New commit detected! Restarting website.")
+                        start_website = subprocess.Popen(start_website_command.split())
+            else:
+                start_website.wait()
+                start_website = subprocess.Popen(start_website_command.split())
             running = args.restart
     except KeyboardInterrupt:
         start_website.terminate()
