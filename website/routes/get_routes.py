@@ -25,10 +25,6 @@ def categories():
 def contact():
     return flask.render_template('contact-us.html')
 
-@app.route('/login')
-def login():
-    return flask.render_template('login-page.html')
-
 @app.route('/thank-you-for-contacting-us')
 def thanks_contact():
     return flask.render_template('thanks-for-contacting.html')

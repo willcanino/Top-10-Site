@@ -25,6 +25,6 @@ class RegistrationForm(flask_wtf.FlaskForm):
             raise ValidationError('That email is taken. Please choose a different one.')
 
 class LoginForm(flask_wtf.FlaskForm):
-    email = wtforms.StringField('Email', validators=[validators.DataRequired(), validators.Email()])
+    email_or_username = wtforms.StringField('Email or Username', validators=[validators.DataRequired()])
     password = wtforms.PasswordField('Password', validators=[validators.DataRequired()])
     submit = wtforms.SubmitField('Login')

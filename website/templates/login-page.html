@@ -1,12 +1,28 @@
-{% extends "layout.html" %}\
+{% extends "layout.html" %}
 {% block tab_header %}Top 10 | Log In{% endblock tab_header %}
 {% block content %}
-  <form class="login" action="index.html" method="post">
-    <label for="email">Email</label><br>
-      <input type="text" name="email" id="email-login" maxlength="100" spellcheck="false" required="true"><br><br>
-      <label for="password">Password</label><br>
-        <input type="password" name="password" id="password-login" maxlength="16" spellcheck="false" required="true"><br><br>
-      <button type="submit" name="button" class="btton-login">Log In</button>
+  <form method="POST">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div style="color: red">
+            {{ message }}
+          </div>
+        {% endfor %}
+        <br />
+      {% endif %}
+    {% endwith %}
+    {{ form.hidden_tag() }}
+    {{ form.email_or_username.label }}
+    <br>
+    {{ form.email_or_username }}
+    <br>
+    <br>
+    {{ form.password.label }}
+    <br>
+    {{ form.password }}
+    <br>
+    {{ form.submit }}
   </form>
   <div class="sign-up-link">
     <h2>Don't have a Top 10 Account?</h2>
