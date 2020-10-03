@@ -31,3 +31,8 @@ def login():
             return redirect(url_for('home'))
         flash('Login failed. Please check your username/email and password.')
     return render_template('login-page.html', form=login_form)
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
