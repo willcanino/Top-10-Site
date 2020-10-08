@@ -3,7 +3,10 @@ from flask_login import UserMixin
 
 @login_manager.user_loader
 def load_user(username):
-    return User.query.get(str(username))
+    try:
+        return User.query.get(str(username))
+    except Exception:
+        return None
 
 class User(db.Model, UserMixin):
     username = db.Column(db.String(35), primary_key=True)
